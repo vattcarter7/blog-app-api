@@ -1,9 +1,9 @@
 import { format, createLogger, transports } from 'winston';
 
-const { combine, timestamp } = format;
+const { combine, timestamp, colorize, simple } = format;
 
 export const logger = createLogger({
-  level: 'debug',
-  format: combine(timestamp(), format.json()),
+  level: 'info',
+  format: combine(timestamp(), colorize(), simple()),
   transports: [new transports.Console()],
 });
