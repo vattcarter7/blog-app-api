@@ -1,5 +1,7 @@
+import { logger } from './utils/logger';
+
 async function startServer() {
-  console.log('Hello world  ');
+  logger.info('Start server');
 }
 
 startServer();
