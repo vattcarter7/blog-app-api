@@ -15,12 +15,11 @@ export const listenGracefulShutdown = async (
 ) => {
   for (const signal of signals) {
     process.on(signal, async () => {
-      logger.info(
-        `Got signal ${signal}. Attempting gracefully shutdown server...`
-      );
+      logger.error(`Got signal ${signal}.`);
+      logger.info('Attempting gracefully shutdown HTTP server...');
       await server.close();
       await disconnectFromDb();
-      logger.info(`Server gracefully shutdown successfully.`);
+      logger.info(`Server gracefully shutdown.`);
       process.exit(0);
     });
   }
