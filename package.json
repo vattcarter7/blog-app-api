@@ -6,10 +6,11 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/app.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "npx husky init"
   },
   "keywords": [],
-  "author": "",
+  "author": "vatt sopheak",
   "license": "ISC",
   "dependencies": {
     "@fastify/swagger": "^8.14.0",

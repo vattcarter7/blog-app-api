@@ -13,9 +13,10 @@ npx tsc --init
 ## Husky && commitlint
 
 - Make sure to initialize git in the project
-  git init
 
-npx husky
+git init
+
+npx husky init
 
 touch .husky/commit-msg
 
@@ -23,7 +24,7 @@ touch .husky/commit-msg
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit "\${1}"
+npx --no -- commitlint --edit ""
 ```
 
 chmod a+x .husky/commit-msg
@@ -36,11 +37,11 @@ touch .prettierignore
 
 touch .husky/pre-commit
 
-chmod a+x .husky/pre-commit
-
 ```
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
 ```
+
+chmod a+x .husky/pre-commit
