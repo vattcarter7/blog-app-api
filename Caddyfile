@@ -1,0 +1,5 @@
+blog.vattsopheak.com {
+  reverse_proxy blog-app:4000 {
+    header_down Strict-Transport-Security max-age=31536000;
+  }
+}
