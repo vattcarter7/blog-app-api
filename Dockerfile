@@ -1,15 +1,15 @@
 FROM node:21-alpine
 
-ADD package.json /tmp/package.json
-ADD package-lock.json /tmp/package-lock.json
+WORKDIR /app
+
+COPY package.json /tmp/package.json
+COPY package-lock.json /tmp/package-lock.json
 
 RUN cd /tmp && npm install
 
-ADD ./ /src
+COPY ./ ./
 
-RUN cp -a /tmp/node_modules /src/
-
-WORKDIR /src
+RUN cp -a /tmp/node_modules ./
 
 RUN npm run-script build
 
