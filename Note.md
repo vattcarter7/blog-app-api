@@ -45,3 +45,11 @@ npx lint-staged
 ```
 
 chmod a+x .husky/pre-commit
+
+## deployment
+
+touch .env
+
+copy database url into .env file on server
+
+chmod a+x deploy.sh
