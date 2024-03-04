@@ -9,7 +9,7 @@ ADD ./ /src
 
 RUN cp -a /tmp/node_modules /src/
 
-WORKDIR /app
+WORKDIR /src
 
 RUN npm run-script build
 
